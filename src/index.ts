@@ -90,9 +90,7 @@ export const asyncFactory =
     );
     const fn: Procedure = (params) => (dispatch, getState, extraArgument) =>
       resolve()
-        .then(() => {
-          dispatch(async.started(params));
-        })
+        .then(() => dispatch(async.started(params)))
         .then(() => worker(params, dispatch, getState, extraArgument))
         .then(
           (result) => {
